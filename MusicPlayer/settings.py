@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'crispy_forms',
     'MusicPlayer',
     'accounts',
+    'django_bootstrap_icons',
+
+
 ]
 
 MIDDLEWARE = [

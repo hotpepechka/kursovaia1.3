@@ -5,6 +5,12 @@ html {
 
 
 }
+@font-face {
+    font-family: PixelFont;
+    src: url("fonts/retro-land-mayhem.ttf") format("truetype");
+
+
+}
 
 body {
    background: url("https://i.yapx.ru/TwTFy.gif");
@@ -228,4 +234,44 @@ h3 {
 }
 .mejs__controls .mejs__horizontal-volume-slider .mejs__horizontal-volume-current {
     background: #fff;
+}
+.Personal-form{
+    color: white;
+    background-size: cover;
+
+    font-size: 40px;
+    display: block;
+    margin-left: 150px;
+    margin-top: 20px;
+
+
+}
+.your-play{
+    display: flex;
+    justify-content: center;
+}
+.music-form{
+    background-color: #6829cb;
+    margin: 40px;
+    width: 400px;
+
+
+    border-radius: 10px;
+    font-size: 20px;
+
+}
+
+.best-streaming{
+    color: white;
+    font-family: "PixelFont", Serif;
+
+}
+.playlists{
+    margin-right: 650px;
+
+}
+.loved{
+    color: white;
+    font-size: 30px;
+    margin-right: 20px;
 }

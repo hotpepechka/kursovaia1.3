@@ -8,7 +8,8 @@ from . models import Song
 from . models import Loved
 from django.views.generic import TemplateView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
-
+from .forms import NewSonger
+from django.urls import reverse_lazy  # new
 
 
 
@@ -51,6 +52,23 @@ class ButtonLoved(ListView):
         return super().form_valid(form)
 
 
+class NewMusic(CreateView):
+    model = Song
+    form_class = NewSonger
+    template_name = 'NewMusic.html'
+    success_url = reverse_lazy("index")
 
+
+class MusicDelete(DeleteView):
+    model = Song
+    template_name = 'deleteMusic.html'
+    success_url = reverse_lazy('AllSong')
+
+
+class EditMusic(UpdateView):
+    model = Song
+    form_class = NewSonger
+    template_name = 'editMusic.html'
+    success_url = reverse_lazy('AllSong')
 
 

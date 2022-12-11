@@ -11,6 +11,13 @@ html {
 
 
 }
+@font-face {
+    font-family: Spotyfich;
+    src: url("fonts/Spotifych.ttf") format("truetype");
+
+
+}
+
 
 body {
    background: url("https://i.yapx.ru/TwTFy.gif");
@@ -274,4 +281,49 @@ h3 {
     color: white;
     font-size: 30px;
     margin-right: 20px;
+}
+.register-form{
+    color: white;
+    background-color: rgba(199, 37, 255, 0.32);;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                backdrop-filter: blur(1px);
+}
+.login-form{
+        color: white;
+    background-color: rgba(199, 37, 255, 0.32);;
+    width: 400px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                backdrop-filter: blur(1px);
+}
+.New-buttons{
+    font-size: 20px;
+    margin-left: 50px;
+    color: white;
+
+}
+
+.New-Music{
+     color: white;
+    background-color: rgba(199, 37, 255, 0.32);;
+    height: 815px;
+    padding: 20px;
+    width: 550px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    backdrop-filter: blur(1px);
+
+}
+.Edit-music{
+color: white;
+    background-color: rgba(199, 37, 255, 0.32);;
+    height: 880px;
+    padding: 20px;
+    width: 850px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    backdrop-filter: blur(1px);
 }

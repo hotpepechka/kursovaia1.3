@@ -48,7 +48,12 @@
                     <span class="font-weight-bold"> {{item.artist}} - </span>
             <span>{{item.title}}</span>
                       {% csrf_token %}
-                  <button class="btn btn-success ml-2" type="submit"><a href="{% url 'SureToLove' user.pk %}">Loved</a></button>
+                      {% if user.is_superuser %}
+                         <a href="{% url 'DeleteSong' user.pk %}">Delete</a>
+                          <a href="{% url 'EditSong' user.pk %}">Edit</a>
+                  {% else %}
+                      <button class="btn btn-success ml-2" type="submit"><a href="{% url 'SureToLove' user.pk %}">Loved</a></button>
+                    {% endif %}
                   </form>
 
 

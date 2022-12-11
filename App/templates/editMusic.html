@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
+    <title>Spotifych</title>
 </head>
 <body>
-    {% extends 'index.html' %}
+{% extends 'index.html' %}
     {% block content %}
 
     <nav class="navbar navbar-expand-md navbar-custom mb-4">
@@ -13,11 +13,6 @@
          <div class="collapse navbar-collapse" id="navbarCollapse">
               {% if user.is_authenticated %}
                     <ul class="navbar-nav ml-auto">
-
-                        <div class="playlists">
-                        <a href="{% url 'Loved' user.pk %}" class="loved">Любимое </a>
-                                <a href="{% url 'AllSong' user.pk %}" class="loved">Вся Музыка</a>
-                            </div>
 
 
 
@@ -45,17 +40,15 @@
                 {% endif %}
             </div>
     </nav>
-        <center>
-         <h2>Login</h2>
-    <form method="post" class="login-form">
+    <center>
+    <h1>Edit</h1>
+    <form action="" method="post" class="Edit-music">
         {% csrf_token %}
-       <center>
-            {{ form.as_p }}
-        <button type="submit">Login</button>
-       </center>
+        {{form.as_p}}
+        <button class="btn btn-info ml-2" type="submit">Update</button>
     </form>
-        </center>
+    </center>
 
-    {% endblock content %}
+    {% endblock %}
 </body>
 </html>

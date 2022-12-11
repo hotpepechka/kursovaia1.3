@@ -48,8 +48,8 @@
     <h2>Личный кабинет</h2>
 <form class="Personal-form">
       {% if user.is_authenticated %}
-        <p>Hi {{ user.username }} :)</p>
-          <p class="your-play">Ваш плейлист:</p>
+        <p> {{ user.username }} </p>
+
 
     {% endif %}
     </form>

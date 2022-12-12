@@ -284,6 +284,7 @@ h3 {
     color: white;
     font-size: 30px;
     margin-right: 20px;
+    font-family: Spotyfich;
 }
 .register-form{
     color: white;
@@ -351,5 +352,11 @@ color: white;
         font-family: Spotyfich;
     margin-left: 15px;
 
-
+}
+.btn-custom1{
+    font-family: Spotyfich;
+}
+.nav-custom{
+    font-family: Spotyfich;
+    color: white;
 }

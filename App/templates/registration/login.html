@@ -46,12 +46,12 @@
             </div>
     </nav>
         <center>
-         <h2>Login</h2>
+         <h2 class="BigText">Login</h2>
     <form method="post" class="login-form">
         {% csrf_token %}
        <center>
             {{ form.as_p }}
-        <button type="submit">Login</button>
+        <button type="submit" class="btn btn-light btn-custom">Login</button>
        </center>
     </form>
         </center>

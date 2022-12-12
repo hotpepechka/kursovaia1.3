@@ -260,15 +260,18 @@ h3 {
 .music-form{
     background-color: #6829cb;
     margin: 40px;
+    padding-top: 6px;
     width: 400px;
+    height: 50px;
 
 
-    border-radius: 10px;
+    border-radius: 100px;
     font-size: 20px;
 
 }
 
 .best-streaming{
+    text-align: center;
     color: white;
     font-family: "PixelFont", Serif;
 
@@ -285,16 +288,22 @@ h3 {
 .register-form{
     color: white;
     background-color: rgba(199, 37, 255, 0.32);;
-    width: 600px;
+    width: 700px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
                 backdrop-filter: blur(1px);
 }
 .login-form{
+
         color: white;
     background-color: rgba(199, 37, 255, 0.32);;
+    background-size: cover;
     width: 400px;
-    height: 150px;
+    height: 170px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
                 backdrop-filter: blur(1px);
@@ -309,21 +318,38 @@ h3 {
 .New-Music{
      color: white;
     background-color: rgba(199, 37, 255, 0.32);;
-    height: 815px;
-    padding: 20px;
+    height: 405px;
+    padding-top: 20px;
+
     width: 550px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     backdrop-filter: blur(1px);
 
 }
+textarea{
+    height: 40px;
+}
 .Edit-music{
 color: white;
     background-color: rgba(199, 37, 255, 0.32);;
-    height: 880px;
+    height: 470px;
+
     padding: 20px;
     width: 850px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     backdrop-filter: blur(1px);
+}
+.BigText{
+    color: white;
+    font-family: Spotyfich;
+    text-shadow: 1px 1px 2px black, 0 0 1em black;
+}
+.btn-custom{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        font-family: Spotyfich;
+    margin-left: 15px;
+
+
 }

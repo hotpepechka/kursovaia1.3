@@ -4,6 +4,7 @@
 <html lang="en">
  <head>
   <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>
    My Music Player
@@ -28,10 +29,12 @@
 
 
             .navbar-custom{
+                background-size: 100%;
                 background-color: rgba(199, 37, 255, 0.1);
                 box-shadow: 0 0 10px rgba(0,0,0,0.5);
                 backdrop-filter: blur(1px);
                 height: 75px;
+                background-size: cover;
                 font-family: "NewFont";
             }
 
@@ -47,14 +50,10 @@
                 text-decoration: none; !important;
                 font-family: 'Spotyfich';
             }
-            .btn-custom{
-                position: absolute;
-                width: 30px;
-                right: 50px;
-                background-color: #6829cb;
 
 
-            }
+
+
             .nav-link-custom{
                 color: white;
             }
@@ -94,7 +93,7 @@
                 {% else %}
                     <form class="form-inline ml-auto">
                         <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
-                        <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+                        <a href="{% url 'signup' %}" class="btn btn-light btn-custom">Sign up</a>
                     </form>
                 {% endif %}
             </div>

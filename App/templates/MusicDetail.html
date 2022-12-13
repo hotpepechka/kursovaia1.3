@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Detail</title>
+</head>
+<body>
+{% extends 'index.html' %}
+    {% block content %}
+
+    <nav class="navbar navbar-expand-md navbar-custom mb-4">
+        <a class="navbar-brand-custom" href="{% url 'index' %}">Spotifych</a>
+         <div class="collapse navbar-collapse" id="navbarCollapse">
+              {% if user.is_authenticated %}
+                    <ul class="navbar-nav ml-auto">
+
+
+
+                        <li class="nav-item">
+
+                            <a class="nav-link dropdown-toggle nav-custom" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ user.username }}
+                            </a>
+                           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+
+
+                                   <a class="dropdown-item" href="{% url 'PersonalArea' %}">Личный кабинет</a>
+
+                                <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
+
+
+                            </div>
+                        </li>
+                    </ul>
+                {% else %}
+                    <form class="form-inline ml-auto">
+                        <a href="{% url 'login' %}" class="btn btn-outline-light btn-custom1">Log in</a>
+                        <a href="{% url 'signup' %}" class="btn btn-light btn-custom">Sign up</a>
+                    </form>
+                {% endif %}
+            </div>
+    </nav>
+        <center>
+        <form class="form-detail">
+            <h2>Название: {{ object.title }}</h2>
+        <h3>Исполнитель: {{ object.artist }}</h3>
+    <p>Жанр: {{ object.genre }}</p>
+    <a href="{% url 'DeleteSong' object.pk %}" class="btn btn-light btn-custom">Delete</a>
+    <a href="{% url 'EditSong' object.pk %}" class="btn btn-light btn-custom">Edit</a>
+        </form>
+
+        </center>
+
+    {% endblock %}
+</body>
+</html>

@@ -40,14 +40,15 @@
                 {% endif %}
             </div>
     </nav>
-
+    <center>
     <h1 class="BigText">Delete</h1>
-    <form action="" method="get">
+    <form action="" method="post" class="delete-form">
         {% csrf_token %}
-        {{form.as_p}}
         <p>Are u sure want to delete "{{ song.title }}"?</p>
-        <input type="submit" value="confirm">
+        <input type="submit" value="confirm" class="btn btn-light btn-custom">
     </form>
+    </center>
+
     {% endblock %}
 </body>
 </html>

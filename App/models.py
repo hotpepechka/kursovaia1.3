@@ -14,6 +14,7 @@ class Song(models.Model):
     audio_file = models.FileField(blank=True, null=True)
     audio_link = models.CharField(max_length=200, blank=True, null=True)
     duration = models.CharField(max_length=20)
+    genre = models.ForeignKey('Genre', on_delete=models.CASCADE)
     paginate_by = 2
 
     def __str__(self):
@@ -33,4 +34,11 @@ class Loved(models.Model):
 
     def get_absolute_url(self):
         return reverse('PersonalArea', args=[str(self.id)])
+
+
+class Genre(models.Model):
+    name = models.TextField()
+
+    def __str__(self):
+        return self.name
 

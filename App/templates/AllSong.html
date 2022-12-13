@@ -43,14 +43,18 @@
 <form class="Personal-form">
           <center><div >
           <h1 class="loved">Музыка</h1>
-            <form class="music-form">  {% for item in object_list %}</form>
+
+                <input name="q" type="text" placeholder="Поиск по жанру" class="form-control">
+
+            <form class="music-form">  {% for item in object_list %} </form>
                   <form class="music-form" method="post">
+
                     <span class="font-weight-bold"> {{item.artist}} - </span>
             <span>{{item.title}}</span>
                       {% csrf_token %}
                       {% if user.is_superuser %}
-                         <a href="{% url 'DeleteSong' user.pk %}">Delete</a>
-                          <a href="{% url 'EditSong' user.pk %}">Edit</a>
+
+                          <a href="{% url 'MusicDetail' item.pk %}">Detail</a>
                   {% else %}
                       <button class="btn btn-success ml-2" type="submit"><a href="{% url 'SureToLove' user.pk %}">Loved</a></button>
                     {% endif %}

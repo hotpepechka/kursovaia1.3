@@ -24,7 +24,7 @@
                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
 
 
-                                   <a class="dropdown-item" href="{% url 'PersonalArea' %}">Личный кабинет</a>
+                                   <a class="dropdown-item" href="{% url 'PersonalArea'  user.pk %}">Личный кабинет</a>
 
                                 <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
 
@@ -43,7 +43,7 @@
 <form class="Personal-form">
           <center><div >
           <h1>Твоя любимая музыка</h1>
-            <form class="music-form">  {% for item in users %}</form>
+            <form class="music-form">  {% for item in object_list %}</form>
                   <form class="music-form">
                     <span class="font-weight-bold"> {{item.artist}} - </span>
             <span>{{item.title}}</span>

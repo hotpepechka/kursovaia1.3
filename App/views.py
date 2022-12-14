@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.views import View
 from django.views.generic import ListView, DetailView
 from . import models
 from django.shortcuts import render, redirect
@@ -9,6 +10,7 @@ from . models import Loved
 from django.views.generic import TemplateView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from .forms import NewSonger
+from .forms import NewNewSonger
 from django.urls import reverse_lazy  # new
 
 
@@ -22,7 +24,7 @@ class SongList(ListView):
 
 
 class LovedList(ListView):
-    model = Song
+    model = Loved
     template_name = 'Loved.html'
 
 
@@ -50,19 +52,16 @@ def index(request):
 
 def index1(request, pk):
     users = Loved.objects.filter(user=request.user.id).all()
+
     return render(request, "Loved.html", {"users": users})
 
 class MusicDetail(DetailView):
     model = Song
     template_name = "MusicDetail.html"
 
-class ButtonLoved(ListView):
-    model = models.Loved
-    template_name = 'SureToLove.html'
 
-    def form_valid(self, form):
-        form.instance.author = self.request.user
-        return super().form_valid(form)
+
+
 
 
 class NewMusic(CreateView):
@@ -85,3 +84,11 @@ class EditMusic(UpdateView):
     success_url = reverse_lazy('index')
 
 
+class LovedMusic(View):
+    def post(self, request, pk):
+        form = NewNewSonger(request.POST)
+        if form.is_valid():
+            form = form.save(commit=False)
+            form.user_id = pk
+            form.save()
+        return redirect('index')

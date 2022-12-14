@@ -24,7 +24,7 @@
                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
 
 
-                                   <a class="dropdown-item" href="{% url 'PersonalArea' %}">Личный кабинет</a>
+                                   <a class="dropdown-item" href="{% url 'PersonalArea'  user.pk %}">Личный кабинет</a>
 
                                 <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
 
@@ -41,6 +41,7 @@
             </div>
     </nav>
     <center>
+
     <h1 class="BigText">Delete</h1>
     <form action="" method="post" class="delete-form">
         {% csrf_token %}

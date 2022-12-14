@@ -2,6 +2,9 @@ from django.db import models
 from django.conf import settings
 from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
+import copy
+from django.forms import ModelForm, forms
+
 
 
 # Create your models here.
@@ -25,15 +28,17 @@ class Song(models.Model):
 
 
 class Loved(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
     title = models.TextField()
     artist = models.TextField()
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
-
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('PersonalArea', args=[str(self.id)])
+
+
+
 
 
 class Genre(models.Model):

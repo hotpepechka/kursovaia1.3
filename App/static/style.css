@@ -386,3 +386,14 @@ color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     backdrop-filter: blur(1px);
 }
+.Sure-to-love{
+        color: white;
+    background-color: rgba(199, 37, 255, 0.32);;
+    height: 120px;
+
+    padding: 20px;
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    backdrop-filter: blur(1px);
+}

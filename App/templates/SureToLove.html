@@ -24,7 +24,7 @@
                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
 
 
-                                   <a class="dropdown-item " href="{% url 'PersonalArea' %}">Личный кабинет</a>
+                                   <a class="dropdown-item " href="{% url 'PersonalArea'  user.pk %}">Личный кабинет</a>
 
                                 <a class="dropdown-item" href="{% url 'logout' %}">Выйти</a>
 
@@ -40,13 +40,16 @@
                 {% endif %}
             </div>
     </nav>
-      <form class="music-form">  {% for item in page_obj %}</form>
-                  <form class="music-form" method="post">
-                    <p>Вы действительно хотите добавить {{ item.title }} в любимое?</p>
-                      {% csrf_token %}
+        <center>
+
+        <form class="Sure-to-love" action="" method="post">
+
+             {% csrf_token %}
+                           <input type="text" value="{{ song.title }}">
+                            <input type="text" value="{{ song.artist }}">
                   <button class="btn btn-success ml-2" type="submit">loved</button>
                   </form>
- {% endfor %}
+        </center>
           </div>
             </center>
 

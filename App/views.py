@@ -1,16 +1,13 @@
-from django.shortcuts import render, get_object_or_404
-from django.views import View
+from django.http import HttpResponseRedirect
 from django.views.generic import ListView, DetailView
 from . import models
 from django.shortcuts import render, redirect
-# imported our models
 from django.core.paginator import Paginator
 from . models import Song
 from . models import Loved
 from django.views.generic import TemplateView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from .forms import NewSonger
-from .forms import NewNewSonger
 from django.urls import reverse_lazy  # new
 
 
@@ -18,14 +15,6 @@ class MusicHome(TemplateView):
     template_name = 'index.html'
 
 
-class SongList(ListView):
-    model = Song
-    template_name = 'personal_area.html'
-
-
-class LovedList(ListView):
-    model = Loved
-    template_name = 'Loved.html'
 
 
 class AllSongList(ListView):
@@ -50,18 +39,11 @@ def index(request):
     return render(request, "index.html", context)
 
 
-def index1(request, pk):
-    users = Loved.objects.filter(user=request.user.id).all()
 
-    return render(request, "Loved.html", {"users": users})
 
 class MusicDetail(DetailView):
     model = Song
     template_name = "MusicDetail.html"
-
-
-
-
 
 
 class NewMusic(CreateView):
@@ -84,11 +66,11 @@ class EditMusic(UpdateView):
     success_url = reverse_lazy('index')
 
 
-class LovedMusic(View):
+class Meow(DetailView):
+    model = models.Song
+    template_name = 'SureToLove.html'
     def post(self, request, pk):
-        form = NewNewSonger(request.POST)
-        if form.is_valid():
-            form = form.save(commit=False)
-            form.user_id = pk
-            form.save()
-        return redirect('index')
+        models.Loved.objects.create(title=models.Song.objects.get(title=request.POST.get('title')), artist=models.Song.objects.get(artist=request.POST.get('artist')), user=request.user)
+        instance = models.Song.objects.get(pk=pk)
+        return HttpResponseRedirect(request.META.get('HTTP_ORIGIN') + f'/users/PersonalArea/{request.user.pk}/')
+

@@ -28,11 +28,12 @@ class Song(models.Model):
 
 
 class Loved(models.Model):
+    title = models.CharField(max_length=255)
+    artist = models.CharField(max_length=255)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
-    title = models.TextField()
-    artist = models.TextField()
+
     def __str__(self):
-        return self.title
+        return str(self.title)
 
     def get_absolute_url(self):
         return reverse('PersonalArea', args=[str(self.id)])

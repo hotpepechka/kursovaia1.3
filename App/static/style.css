@@ -38,6 +38,18 @@ h3 {
     color: #ccc;
     padding: 0 10%;
 }
+.Loved-ul{
+    font-family: Spotyfich;
+    list-style-type: none;
+    color: white;
+    background-color: rgba(199, 37, 255, 0.32);;
+    width: 700px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                backdrop-filter: blur(1px);
+}
 
 .music-player {
     display: block;
@@ -389,11 +401,19 @@ color: white;
 .Sure-to-love{
         color: white;
     background-color: rgba(199, 37, 255, 0.32);;
-    height: 120px;
+    height: 220px;
 
     padding: 20px;
     width: 450px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     backdrop-filter: blur(1px);
+}
+.input-css{
+    background: transparent;
+    border: none;
+    font-family: Spotyfich;
+    color: white;
+    display: flex;
+    margin-left: 170px;
 }

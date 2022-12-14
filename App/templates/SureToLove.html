@@ -8,6 +8,7 @@
 {% extends 'index.html' %}
     {% block content %}
 
+
     <nav class="navbar navbar-expand-md navbar-custom mb-4">
         <a class="navbar-brand-custom" href="{% url 'index' %}">Spotifych</a>
          <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -34,24 +35,29 @@
                     </ul>
                 {% else %}
                     <form class="form-inline ml-auto">
+
                         <a href="{% url 'login' %}" class="btn btn-outline-light btn-custom1">Log in</a>
                         <a href="{% url 'signup' %}" class="btn btn-light btn-custom">Sign up</a>
                     </form>
                 {% endif %}
             </div>
     </nav>
-        <center>
-
+        <div class="container">
+         <center>
         <form class="Sure-to-love" action="" method="post">
-
              {% csrf_token %}
-                           <input type="text" value="{{ song.title }}">
-                            <input type="text" value="{{ song.artist }}">
-                  <button class="btn btn-success ml-2" type="submit">loved</button>
+            <center>
+                <p>Название:</p>
+                           <input required="" name="title" class="input-css" value="{{ object.title }}" readonly>
+                            <p>Исполнитель:</p>
+                            <input required="" name="artist" class="input-css" value="{{ object.artist }}" readonly>
+                  <button class="btn btn-light btn-custom" type="submit">loved</button>
+            </center>
+
                   </form>
         </center>
-          </div>
-            </center>
+        </div>
+
 
     </form>
     {% endblock content%}

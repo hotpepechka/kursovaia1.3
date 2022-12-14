@@ -15,7 +15,6 @@
                     <ul class="navbar-nav ml-auto">
 
                         <div class="playlists">
-                        <a href="{% url 'Loved' user.pk %}" class="loved">Любимое </a>
                                 <a href="{% url 'AllSong' user.pk %}" class="loved">Вся Музыка</a>
                             </div>
 
@@ -49,6 +48,19 @@
 <form class="Personal-form">
       {% if user.is_authenticated %}
         <p> {{ user.username }} </p>
+          <center>
+           <h1 class="BigText">Твоя любимая музыка</h1>
+          <ul class="Loved-ul">
+               {% for item in user.loved_set.all %}
+                <li>
+                    <div>
+                        {{ item.title }} - {{ item.artist }}
+                    </div>
+                </li>
+            {% endfor %}
+          </ul>
+          </center>
+
 
 
     {% endif %}

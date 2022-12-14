@@ -11,7 +11,8 @@ class NewSonger(ModelForm):
 class NewNewSonger(ModelForm):
     class Meta:
         model = Song
-        fields = ['title', 'artist']
+        fields = ("title", "artist")
+
 
 
 

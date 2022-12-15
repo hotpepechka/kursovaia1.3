@@ -45,13 +45,15 @@
                 {% endif %}
             </div>
     </nav>
+    {% load crispy_forms_tags %}
         <center>
-         <h2 class="BigText">Login</h2>
+         <h2 class="BigText">Логин</h2>
     <form method="post" class="login-form">
         {% csrf_token %}
        <center>
-            {{ form.as_p }}
-        <button type="submit" class="btn btn-light btn-custom">Login</button>
+
+            {{ form|crispy }}
+        <button type="submit" class="btn btn-light btn-custom1" style="margin-top:10px;">Login</button>
        </center>
     </form>
         </center>

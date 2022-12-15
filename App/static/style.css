@@ -314,7 +314,7 @@ h3 {
     background-color: rgba(199, 37, 255, 0.32);;
     background-size: cover;
     width: 400px;
-    height: 170px;
+    height: 200px;
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 10px;
@@ -375,9 +375,22 @@ color: white;
         font-family: Spotyfich;
     margin-left: 15px;
 
+
+}
+
+.buttonser{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        font-family: Spotyfich;
+        margin-bottom:10px;
+}
+.login-buttons{
+ margin-top: 10px;
 }
 .btn-custom1{
     font-family: Spotyfich;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        font-family: Spotyfich;
+
 }
 .nav-custom{
     font-family: Spotyfich;
@@ -416,4 +429,13 @@ color: white;
     color: white;
     display: flex;
     margin-left: 170px;
+}
+.input-css1{
+ background: transparent;
+    border: none;
+    font-family: Spotyfich;
+    color: white;
+    display: flex;
+    margin-left: 170px;
+    padding:10px;
 }

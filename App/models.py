@@ -11,13 +11,13 @@ from django.forms import ModelForm, forms
 
 
 class Song(models.Model):
-    title = models.TextField()
-    artist = models.TextField()
-    image = models.ImageField()
-    audio_file = models.FileField(blank=True, null=True)
-    audio_link = models.CharField(max_length=200, blank=True, null=True)
-    duration = models.CharField(max_length=20)
-    genre = models.ForeignKey('Genre', on_delete=models.CASCADE)
+    title = models.TextField(verbose_name='Название')
+    artist = models.TextField(verbose_name='Исполнитель')
+    image = models.ImageField(verbose_name='Обложка')
+    audio_file = models.FileField(blank=True, null=True, verbose_name='Аудио-файл')
+    audio_link = models.CharField(max_length=200, blank=True, null=True, verbose_name='Аудио-ссылка' )
+    duration = models.CharField(max_length=20, verbose_name='Длина трека')
+    genre = models.ForeignKey('Genre', on_delete=models.CASCADE, verbose_name='Жанр')
     paginate_by = 2
 
     def __str__(self):
@@ -28,8 +28,8 @@ class Song(models.Model):
 
 
 class Loved(models.Model):
-    title = models.CharField(max_length=255)
-    artist = models.CharField(max_length=255)
+    title = models.CharField(max_length=255, verbose_name='Название')
+    artist = models.CharField(max_length=255, verbose_name='Исполнитель')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
 
     def __str__(self):

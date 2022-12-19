@@ -7,6 +7,7 @@
 <body>
     {% extends 'index.html' %}
     {% block content %}
+        {% load static %}
 
     <nav class="navbar navbar-expand-md navbar-custom mb-4">
         <a class="navbar-brand-custom" href="{% url 'index' %}">Spotifych</a>
@@ -44,17 +45,53 @@
                 {% endif %}
             </div>
     </nav>
-    <h2>Личный кабинет</h2>
+
 <form class="Personal-form">
+<div class="Personal-name">
+   <h2 class="personal">Личный кабинет</h2>
       {% if user.is_authenticated %}
-        <p> {{ user.username }} </p>
+        <p class="user-name"> {{ user.username }} </p>
+</div>
+
           <center>
-           <h1 class="BigText">Твоя любимая музыка</h1>
+
+                 <div class="contain">
+     <div class="container">
+      <div class="music-player">
+        {% for item in page_obj %}
+
+
+       <div class="cover">
+        <img alt="" src="{{item.image.image.url}}"/>
+       </div>
+       <div class="titre">
+        <h3>
+         {{item.image.artist}}
+        </h3>
+        <h1>
+         {{item.image.title}}
+        </h1>
+
+       </div>
+       <center><a href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}"><i  class="fa fa-step-backward fa-1x"></i></a> &nbsp; &nbsp; &nbsp; <a href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }} {% endif %}"><i class="fa fa-step-forward fa-1x"></i></a></center>
+
+
+       <div class="lecteur">
+        <audio class="fc-media" style="width: 100%;">
+         <source src="{{item.image.audio_file.url}}" type="audio/mp3"/>
+        </audio>
+
+       </div>
+      {% endfor %}
+      </div>
+     </div>
+    </div>
+          <h1 class="BigText1">Твоя любимая музыка</h1>
           <ul class="Loved-ul">
                {% for item in user.loved_set.all %}
                 <li>
                     <div>
-                        {{ item.title }} - {{ item.artist }}
+                        {{ item.image.artist }} - {{ item.image.title }} <a class="btn btn-light btn-custom" href="{% url 'DeleteLoved' item.pk %}">unloved</a>
                     </div>
                 </li>
             {% endfor %}
@@ -66,5 +103,7 @@
     {% endif %}
     </form>
     {% endblock content%}
+  <script src="{% static './script.js' %}">
+  </script>
 </body>
 </html>

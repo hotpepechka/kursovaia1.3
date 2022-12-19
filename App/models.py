@@ -30,6 +30,8 @@ class Song(models.Model):
 class Loved(models.Model):
     title = models.CharField(max_length=255, verbose_name='Название')
     artist = models.CharField(max_length=255, verbose_name='Исполнитель')
+    image = models.ForeignKey('Song', null=True, on_delete=models.CASCADE)
+    paginate_by = 2
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
 
     def __str__(self):
@@ -37,9 +39,6 @@ class Loved(models.Model):
 
     def get_absolute_url(self):
         return reverse('PersonalArea', args=[str(self.id)])
-
-
-
 
 
 class Genre(models.Model):

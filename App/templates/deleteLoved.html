@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Spotifych</title>
+    <title>Title</title>
 </head>
 <body>
 {% extends 'index.html' %}
@@ -41,12 +41,12 @@
             </div>
     </nav>
     <center>
-    <h1 class="BigText">Edit</h1>
-    <form action="" method="post" class="Edit-music">
-                        {% load crispy_forms_tags %}
+
+    <h1 class="BigText">Delete</h1>
+    <form action="" method="post" class="delete-form">
         {% csrf_token %}
-            {{ form|crispy }}
-        <button class="btn btn-light btn-custom2" type="submit">Update</button>
+        <p>Are u sure want to delete "{{ loved.title }}"?</p>
+        <input type="submit" value="confirm" class="btn btn-light btn-custom">
     </form>
     </center>
 

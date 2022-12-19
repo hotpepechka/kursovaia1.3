@@ -55,7 +55,7 @@ h3 {
     display: block;
     position: relative;
     width: 400px;
-    height: 570px;
+    height: 700px;
     margin: auto;
     margin-top: 6%;
     border-radius: 10px 10px 10px 10px;
@@ -119,7 +119,7 @@ h3 {
     padding: 0;
     border: 0;
     font-family: FontAwesome;
-    font-size: 23px;
+    font-size: 30px;
     color: #5bbb95;
     background: transparent;
     padding: 0;
@@ -138,11 +138,28 @@ h3 {
     padding: 0;
     border: 0;
     font-family: FontAwesome;
-    font-size: 20px;
+    font-size: 30px;
     color: #5bbb95;
     background: transparent;
     margin: 0;
     padding: 0;
+}
+.fa-step-forward{
+    color: rgba(106, 27, 190, 0.87);
+    margin-left: 10px;
+
+}
+.fa-step-backward{
+    color: rgba(106, 27, 190, 0.87);
+
+}
+.fa-step-forward-1{
+    color: rgba(106, 27, 190, 0.87);
+
+}
+.fa-step-backward-2{
+        color: rgba(106, 27, 190, 0.87);
+
 }
 .mejs__controls .mejs__mute button:before {
     content: "\f028";
@@ -254,7 +271,10 @@ h3 {
 .mejs__controls .mejs__horizontal-volume-slider .mejs__horizontal-volume-current {
     background: #fff;
 }
+
+
 .Personal-form{
+
     color: white;
     background-size: cover;
 
@@ -262,24 +282,37 @@ h3 {
     display: block;
     margin-left: 150px;
     margin-top: 20px;
-
-
 }
+
+.mlem{
+    color: white;
+    display: flex;
+    margin-left: 10%;
+    align-content: flex-end;
+}
+.Personal-name{
+    position: absolute;
+}
+
 .your-play{
     display: flex;
     justify-content: center;
 }
 .music-form{
-    background-color: #6829cb;
+    background-color: #481e83;
     margin: 40px;
     padding-top: 6px;
     width: 400px;
     height: 50px;
 
 
-    border-radius: 100px;
+    border-radius: 10px;
     font-size: 20px;
 
+}
+.all-in-music{
+    display: flex;
+    justify-content: flex-start;
 }
 
 .best-streaming{
@@ -295,8 +328,24 @@ h3 {
 .loved{
     color: white;
     font-size: 30px;
-    margin-right: 20px;
+    margin-right: 60px;
     font-family: Spotyfich;
+}
+.all-music-logo{
+    color: white;
+    font-size: 30px;
+
+    font-family: Spotyfich;
+}
+.personal{
+    font-family: Spotyfich;
+    color: #282828;
+    text-shadow: 1px 1px 2px white;
+}
+.user-name{
+    font-family: Spotyfich;
+        text-shadow: 1px 1px 2px black;
+
 }
 .register-form{
     color: white;
@@ -331,8 +380,8 @@ h3 {
 .New-Music{
      color: white;
     background-color: rgba(199, 37, 255, 0.32);;
-    height: 470px;
-    padding-top: 20px;
+    height: 570px;
+    padding: 20px;
 
     width: 550px;
     border-radius: 10px;
@@ -346,7 +395,7 @@ textarea{
 .Edit-music{
 color: white;
     background-color: rgba(199, 37, 255, 0.32);;
-    height: 520px;
+    height: 600px;
 
     padding: 20px;
     width: 850px;
@@ -370,10 +419,19 @@ color: white;
     font-family: Spotyfich;
     text-shadow: 1px 1px 2px black, 0 0 1em black;
 }
+.BigText1{
+       color: white;
+    font-family: Spotyfich;
+    text-shadow: 1px 1px 2px black, 0 0 1em black;
+    margin-top: 20px;
+}
+.selected-image{
+    display: none;
+}
 .btn-custom{
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
         font-family: Spotyfich;
-    margin-left: 15px;
+
 
 
 }
@@ -390,7 +448,31 @@ color: white;
     font-family: Spotyfich;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
         font-family: Spotyfich;
+        margin-right: 15px;
 
+}
+.song-image-all{
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    margin-top: -6px;
+    width: 50px;
+}
+.font-weight-bold{
+    margin-left: 20px;
+    font-family: Spotyfich;
+}
+.detail-link{
+    display: flex;
+    justify-content: flex-end;
+}
+.font-title{
+    font-family: Spotyfich;
+}
+.btn-custom2{
+    font-family: Spotyfich;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        font-family: Spotyfich;
+        margin-top: 15px;
 }
 .nav-custom{
     font-family: Spotyfich;
@@ -428,7 +510,7 @@ color: white;
     font-family: Spotyfich;
     color: white;
     display: flex;
-    margin-left: 170px;
+    text-align: center;
 }
 .input-css1{
  background: transparent;

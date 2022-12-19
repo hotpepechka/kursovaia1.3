@@ -38,7 +38,12 @@ def index(request):
     context = {"page_obj": page_obj}
     return render(request, "index.html", context)
 
-
+def index3(request, pk):
+    paginator = Paginator(Loved.objects.filter(user=request.user.id).all(), 1)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context = {"page_obj": page_obj}
+    return render(request, "personal_area.html", context)
 
 
 class MusicDetail(DetailView):
@@ -59,6 +64,12 @@ class MusicDelete(DeleteView):
     success_url = reverse_lazy('index')
 
 
+class LovedDelete(DeleteView):
+    model = Loved
+    template_name = 'deleteLoved.html'
+    success_url = reverse_lazy('index')
+
+
 class EditMusic(UpdateView):
     model = Song
     form_class = NewSonger
@@ -70,7 +81,10 @@ class Meow(DetailView):
     model = models.Song
     template_name = 'SureToLove.html'
     def post(self, request, pk):
-        models.Loved.objects.create(title=models.Song.objects.get(title=request.POST.get('title')), artist=models.Song.objects.get(artist=request.POST.get('artist')), user=request.user)
+        models.Loved.objects.create(title=models.Song.objects.get(title=request.POST.get('title')),
+                                    artist=models.Song.objects.get(artist=request.POST.get('artist')),
+                                    image=models.Song.objects.get(image=request.POST.get('image')),
+                                    user=request.user)
         instance = models.Song.objects.get(pk=pk)
         return HttpResponseRedirect(request.META.get('HTTP_ORIGIN') + f'/users/PersonalArea/{request.user.pk}/')
 
